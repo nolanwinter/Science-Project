@@ -15,6 +15,10 @@ local brake = display.newImage( group, "Pedal.png" )
 brake.x = 360; brake.y = 584
 local gas = display.newImage( group, "Pedal.png" )
 gas.x = 660; gas.y = 584
+--REMOVE ME
+local person = display.newImage( group, "walkingPerson.png" )
+person.x = 660; person.y = 584
+
 function starttimer()
   starttime = system.getTimer()
 end

@@ -1,7 +1,7 @@
 timeTester = require( "TimeTester" )
 showResults = require( "ShowResults" )
 
-local sequence = {
+sequence = {
   {
     {duration = 2, isCar = true},
     {duration = 7, isCar = false},
@@ -13,7 +13,6 @@ local sequence = {
     {duration = 5, isCar = true},
     {duration = 4, isCar = false},
     {duration = 3, isCar = true}
-    {
   },
   {
     {duration = 3, isCar = false},
