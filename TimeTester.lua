@@ -2,7 +2,7 @@ t = {}
 
 function t.open()
 local group = display.newGroup()
-time = math.random( 2000, 7000 )
+--time = math.random( 2000, 7000 )
 resultCount = 0
 results = {}
 local street = display.newImage( group, "Street.png" )
@@ -32,7 +32,6 @@ function endtimer()
   resultCount = (resultCount + 1 )
   endtime = system.getTimer()
   resultValue = ((endtime - starttime)/1000)
-  print( resultValue )
   results[resultCount] = resultValue
   if resultCount == 5 then
     showResults.open()
@@ -43,6 +42,7 @@ function endtimer()
     timer1 = timer.performWithDelay( time, carappear )
   end
 end
+
 timer1 = timer.performWithDelay( time, carappear )
 end
 
