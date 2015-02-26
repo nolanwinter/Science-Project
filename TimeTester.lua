@@ -4,10 +4,6 @@ displayNumber = 1
 roundNumber = 1
 
 function t.open()
-function showreSults()
-  showResults.open()
-  group:removeSelf()
-end
 local group = display.newGroup()
 --time = math.random( 2000, 7000 )
 resultCount = 0
@@ -25,7 +21,6 @@ gas.x = 660; gas.y = 584
 --REMOVE ME
 local person = display.newImage( group, "walkingPerson.png" )
 person.x = 660; person.y = 584
-person:addEventListener( "tap", showreSults )
 
 function starttimer()
   starttime = system.getTimer()
