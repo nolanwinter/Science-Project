@@ -1,5 +1,8 @@
 t = {}
 
+displayNumber = 1
+roundNumber = 1
+
 function t.open()
 local group = display.newGroup()
 --time = math.random( 2000, 7000 )
@@ -25,7 +28,9 @@ end
 function carappear()
 brake:addEventListener( "tap", endtimer )
 car = display.newImage( group, "FullCar.png" )
+print( car )
 car.x = 812; car.y = 120
+displayNumber = (displayNumber + 1)
 starttimer()
 end
 function endtimer()
@@ -34,16 +39,24 @@ function endtimer()
   resultValue = ((endtime - starttime)/1000)
   results[resultCount] = resultValue
   if resultCount == 5 then
-    showResults.open()
-    group:removeSelf()
+    if roundNumber == 4 then
+      showResults.open()
+      group:removeSelf()
+    else
+    resultCount = 0
+    displayNumber = 1
+    roundNumber = (roundNumber + 1)
+    end
   elseif resultCount < 5 then
+    print("A" )
     car:removeSelf()
+    print("REMOVEDCAR")
     brake:removeEventListener( "tap", endtimer )
-    timer1 = timer.performWithDelay( time, carappear )
+    timer1 = timer.performWithDelay( (sequence[roundNumber][displayNumber].duration * 1000), carappear )
   end
 end
 
-timer1 = timer.performWithDelay( time, carappear )
+timer1 = timer.performWithDelay( sequence[roundNumber][displayNumber].duration, carappear )
 end
 
 return t
