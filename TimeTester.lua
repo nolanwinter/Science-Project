@@ -18,26 +18,57 @@ local brake = display.newImage( group, "Pedal.png" )
 brake.x = 360; brake.y = 584
 local gas = display.newImage( group, "Pedal.png" )
 gas.x = 660; gas.y = 584
---REMOVE ME
-local person = display.newImage( group, "walkingPerson.png" )
-person.x = 660; person.y = 584
 
 function starttimer()
   starttime = system.getTimer()
 end
-function carappear()
-brake:addEventListener( "tap", endtimer )
-car = display.newImage( group, "FullCar.png" )
-print( car )
-car.x = 812; car.y = 120
-displayNumber = (displayNumber + 1)
-starttimer()
+function whereToGo()
+  gas:removeEventListener( "tap", whereToGo )
+  print("TESTINGA")
+  if displayNumber == 10 then
+    if roundNumber == 4 then
+      showResults.open()
+      group:removeSelf()
+    else
+    displayNumber = 1
+    roundNumber = (roundNumber + 1)
+    end
+  elseif displayNumber < 10 then
+    appear:removeSelf()
+    print( "appear1rmve" )
+    timer1 = timer.performWithDelay( (sequence[roundNumber][displayNumber].duration * 1000), nextImage )
+  end
 end
+function nextImage()
+  print( roundNumber, displayNumber )
+  print( sequence[1][2].isCar )
+  if sequence[roundNumber][displayNumber].isCar == true then
+    gas:addEventListener( "tap", whereToGo )
+    appear = display.newImage( group, "FullCar.png" )
+    print( "appear1" )
+  else
+    brake:addEventListener( "tap", endtimer )
+    appear = display.newImage( group, "walkingPerson.png" )
+    print( "appear2" )
+    starttimer()
+  end
+  appear.x = 812; appear.y = 120
+  displayNumber = (displayNumber + 1)
+end
+--function carappear()
+--brake:addEventListener( "tap", endtimer )
+--car = display.newImage( group, "FullCar.png" )
+--print( car )
+--car.x = 812; car.y = 120
+--displayNumber = (displayNumber + 1)
+--starttimer()
+--end
 function endtimer()
-  resultCount = (resultCount + 1 )
+  brake:removeEventListener( "tap", endtimer )
   endtime = system.getTimer()
   resultValue = ((endtime - starttime)/1000)
   results[resultCount] = resultValue
+  print("TESTINGB")
   if displayNumber == 10 then
     if roundNumber == 4 then
       showResults.open()
@@ -48,14 +79,15 @@ function endtimer()
     end
   elseif displayNumber < 10 then
     print("A" )
-    car:removeSelf()
+    appear:removeSelf()
+    print( "appear2remve" )
     print("REMOVEDCAR")
-    brake:removeEventListener( "tap", endtimer )
-    timer1 = timer.performWithDelay( (sequence[roundNumber][displayNumber].duration * 1000), carappear )
+    timer1 = timer.performWithDelay( (sequence[roundNumber][displayNumber].duration * 1000), nextImage )
   end
-end
+  resultCount = (resultCount + 1 )
+end 
 
-timer1 = timer.performWithDelay( sequence[roundNumber][displayNumber].duration, carappear )
+timer1 = timer.performWithDelay( sequence[roundNumber][displayNumber].duration, nextImage )
 end
 
 return t
