@@ -14,6 +14,7 @@ sequence = {
     {duration = 4, isCar = false},
     {duration = 3, isCar = true}
   },
+  --Radio
   {
     {duration = 3, isCar = false},
     {duration = 5, isCar = true},
@@ -26,6 +27,7 @@ sequence = {
     {duration = 4, isCar = true},
     {duration = 3, isCar = false}
   },
+  --2 peeps talking
   {
     {duration = 6, isCar = true},
     {duration = 4, isCar = true},
@@ -38,6 +40,7 @@ sequence = {
     {duration = 3, isCar = true},
     {duration = 2, isCar = true}
   },
+  --Talking to person
   {
     {duration = 4, isCar = true},
     {duration = 6, isCar = false},
