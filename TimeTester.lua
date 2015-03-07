@@ -19,6 +19,10 @@ brake.x = 360; brake.y = 584
 local gas = display.newImage( group, "Pedal.png" )
 gas.x = 660; gas.y = 584
 
+function wrongTime()
+  
+end
+
 function starttimer()
   starttime = system.getTimer()
 end
