@@ -1,10 +1,10 @@
 t = {}
 
 function t.open()
- local practiceAverage = ((results[1] + results[2] + results[3] + results[4]/4))
- local average1 = ((results[5] + results[6] + results[7] + results[8]/4))
- local average2 = ((results[9] + results[10] + results[11] + results[12]/4))
- local average3 = ((results[13] + results[14] + results[15] + results[16]/4))
+ local practiceAverage = ((results[1] + results[2] + results[3] + results[4])/4)
+ local average1 = ((results[5] + results[6] + results[7] + results[8])/4)
+ local average2 = ((results[9] + results[10] + results[11] + results[12])/4)
+ local average3 = ((results[13] + results[14] + results[15] + results[16])/4)
  local text1 = display.newText( "Practice Round", 512, 75, "Arial", 60 )
  local practice = display.newText( practiceAverage, 512, 125, "Arial", 60 )
  local text2 = display.newText( "First Round", 512, 225, "Arial", 60 )
