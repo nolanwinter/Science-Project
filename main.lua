@@ -3,7 +3,7 @@ showResults = require( "ShowResults" )
 
 sequence = {
   {
-  --[[  {duration = 2, isCar = true},
+    {duration = 2, isCar = true},
     {duration = 7, isCar = false},
     {duration = 4, isCar = true},
     {duration = 6, isCar = true},
@@ -12,17 +12,7 @@ sequence = {
     {duration = 7, isCar = true},
     {duration = 5, isCar = true},
     {duration = 4, isCar = false},
-    {duration = 3, isCar = true}--]]
-    {duration = 1, isCar = true},
-    {duration = 1, isCar = false},
-    {duration = 2, isCar = true},
-    {duration = 3, isCar = true},
-    {duration = 1.5, isCar = false},
-    {duration = 3, isCar = false},
-    {duration = 2, isCar = true},
-    {duration = 1, isCar = true},
-    {duration = 1, isCar = false},
-    {duration = 2, isCar = true}
+    {duration = 3, isCar = true}
   },
   --Radio
   {

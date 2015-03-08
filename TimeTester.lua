@@ -5,7 +5,6 @@ roundNumber = 1
 
 function t.open()
 local group = display.newGroup()
---time = math.random( 2000, 7000 )
 resultCount = 1
 results = {}
 local street = display.newImage( group, "Street.png" )
@@ -18,10 +17,7 @@ local brake = display.newImage( group, "Pedal.png" )
 brake.x = 360; brake.y = 584
 local gas = display.newImage( group, "Pedal.png" )
 gas.x = 660; gas.y = 584
-
-function wrongTime()
-  
-end
+print( "HI WORLD")
 
 function starttimer()
   starttime = system.getTimer()
@@ -34,7 +30,7 @@ function nextRound()
   displayNumber = 0
   roundNumber = (roundNumber + 1)
   displayNumber = (displayNumber + 1)
-  timer1 = timer.performWithDelay( --[[(sequence[roundNumber][displayNumber].duration * --]](1000), nextImage )
+  timer1 = timer.performWithDelay( (sequence[roundNumber][displayNumber].duration * 1000), nextImage )
 end
 
 function whereToGo()
@@ -60,10 +56,11 @@ function whatToDoNext()
     end
   else
     displayNumber = (displayNumber + 1)
-    timer1 = timer.performWithDelay( --[[(sequence[roundNumber][displayNumber].duration * --]](1000), nextImage )
+    timer1 = timer.performWithDelay( (sequence[roundNumber][displayNumber].duration * 1000), nextImage )
   end
 end
 
+print("BYE WORLD")
 function nextImage()
   print( roundNumber, displayNumber )
   print( sequence[1][2].isCar )
@@ -91,7 +88,8 @@ function endtimer()
   whatToDoNext()
 end 
 
-timer1 = timer.performWithDelay( sequence[roundNumber][displayNumber].duration, nextImage )
+print( sequence[roundNumber][displayNumber].duration )
+timer1 = timer.performWithDelay( sequence[roundNumber][displayNumber].duration * 1000, nextImage )
 end
 
 return t
