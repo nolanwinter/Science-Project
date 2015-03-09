@@ -1,5 +1,7 @@
 t = {}
 
+--THIS SETS BOTH displayNumber
+--AND roundNumber TO 1
 displayNumber = 1
 roundNumber = 1
 

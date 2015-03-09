@@ -1,6 +1,9 @@
+--THIS LOADS THE OTHER TWO SCREENS
 timeTester = require( "TimeTester" )
 showResults = require( "ShowResults" )
 
+--THIS SETS THE PAUSE BEFORE EACH IMAGE APPEARS
+-- AS WELL AS WHAT IMAGE TO DISPLAY
 sequence = {
   {
     {duration = 2, isCar = true},
@@ -55,9 +58,6 @@ sequence = {
   }
 }
   
-for i = 1,4 do
-  print( sequence[2][i].duration )
-  print( sequence[2][i].isCar )
-end
 
+--THIS OPENS THE NEXT SCREEN(THE MAIN SCREEN)
 timeTester.open()
