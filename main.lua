@@ -5,6 +5,7 @@ showResults = require( "ShowResults" )
 --THIS SETS THE PAUSE BEFORE EACH IMAGE APPEARS
 -- AS WELL AS WHAT IMAGE TO DISPLAY
 sequence = {
+  --Practice Round
   {
     {duration = 2, isCar = true},
     {duration = 7, isCar = false},
@@ -17,7 +18,7 @@ sequence = {
     {duration = 4, isCar = false},
     {duration = 3, isCar = true}
   },
-  --Radio
+  --Round 1
   {
     {duration = 3, isCar = false},
     {duration = 5, isCar = true},
@@ -30,7 +31,7 @@ sequence = {
     {duration = 4, isCar = true},
     {duration = 3, isCar = false}
   },
-  --2 peeps talking
+  --Round 2
   {
     {duration = 6, isCar = true},
     {duration = 4, isCar = true},
@@ -43,7 +44,7 @@ sequence = {
     {duration = 3, isCar = true},
     {duration = 2, isCar = true}
   },
-  --Talking to person
+  --Round 3
   {
     {duration = 4, isCar = true},
     {duration = 6, isCar = false},
